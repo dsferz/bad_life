@@ -5,6 +5,7 @@ class predators:
         pass
 
 class wolves(predators):
+    name = 'W'
     aggressive_level = 5
     health = 100
     life_limit = 100
@@ -15,24 +16,27 @@ class wolves(predators):
 
 class wolf_musculine(wolves):
     def __init__(self, age = 50):
+        self.name += 'M'
         self.age = age
         pass
 
 class wolf_femenine(wolves):
     def __init__(self, age = 50):
+        self.name += 'F'
         self.age = age
         self.pregant = False
         pass
 
-class grosseaters:
+class grasseaters:
     meat_eaters = False
     gross_eaters = True
     bisex = False
     def __init__(self):
         pass
 
-class rabbits(grosseaters):
+class rabbits(grasseaters):
     health = 50
+    name = 'R'
     velocity = 1
     life_limit = 100
     dying_speed = 5
@@ -41,12 +45,21 @@ class rabbits(grosseaters):
 
 class rabbit_musculine(rabbits):
     def __init__(self, age = 50):
+        self.name += 'M'
         self.age = age
         self.bisex = True
         pass
 
 class rabbit_femenine(rabbits):
     def __init__(self, age = 50):
+        self.name += 'F'
         self.age = age
         self.pregant = False
         pass
+
+
+class grass:
+    def __init__(self, fill_level = 100):
+        self.name = 'G'
+        self.fill_level = 100
+        self.growing = 1
